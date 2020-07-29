@@ -2,7 +2,7 @@
 const {Client} = require('discord.js');
 const client = new Client();
 const botConfig = require('./config/botConfig.json');
-const alarma = require('./command/criptocurren')
+const criptocurren = require('./command/criptocurren')
 client.login(botConfig.token);
 
 client.on("ready", () => {
@@ -14,6 +14,6 @@ client.on("ready", () => {
       .catch(console.error);
 
     // CriptoCurrent
-      alarma(client,botConfig.prefixCript);
+    criptocurren(client,botConfig.prefixCript);
 
 });
