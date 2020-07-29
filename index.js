@@ -6,6 +6,8 @@ const helpbot = require("./command/helpbot");
 const searchGif = require("./command/searchGifs");
 const deleteMessages = require('./command/deleteMessages');
 const status = require('./command/status');
+const weatherFinder = require('./command/weatherFinder');
+const musicPlayer = require('./command/musicPlayer');
 const {prefix,prefixCript} = require('./config/botConfig.json');
 
 client.login(botConfig.token);
@@ -30,4 +32,8 @@ client.on("ready", () => {
   deleteMessages(client,prefix);
   //-status
   status(client,prefix);
+  //weather Finder
+  weatherFinder(client,prefix)
+  //musicPlayer
+  musicPlayer(client,prefix);
 });

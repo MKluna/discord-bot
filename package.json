@@ -16,6 +16,7 @@
     "ffmepg": "0.0.2-security",
     "ffmpeg-static": "^4.2.6",
     "fs": "0.0.1-security",
+    "opusscript": "0.0.7",
     "request": "^2.88.2",
     "urlencode": "^1.1.0",
     "youtube-search": "^1.1.4",
