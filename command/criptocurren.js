@@ -3,13 +3,15 @@ const {prefixCript} = require('../config/botConfig.json')
 const axios = require('axios')
 
 module.exports = (bot, aliases)=>{
-    if(typeof aliases === 'string'){
-        aliases=[aliases]
-    }   
+    // if(typeof aliases === 'string'){
+    //     aliases=[aliases]
+    // }   
+    
     bot.on('message', async message =>{
     let palabraMayus = message.content.replace(prefixCript,'')
     const cryptoMoneda= palabraMayus.toUpperCase();
     const moneda="USD"; 
+    if(message.content===prefixCript+palabraMayus){
     let response = await axios.get(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptoMoneda}&tsyms=${moneda}`);
     const conten = response.data.DISPLAY[cryptoMoneda][moneda];
 
@@ -24,6 +26,6 @@ module.exports = (bot, aliases)=>{
       .addField(`VOL: ${conten.TOPTIERVOLUME24HOUR}`,'------------------------------------')
       .addField('Something One','Lorem Imsump')
       message.channel.send(embed);  
-
+    }
 })
 }

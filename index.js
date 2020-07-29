@@ -1,10 +1,11 @@
 const { Client } = require("discord.js");
 const client = new Client();
 const botConfig = require("./config/botConfig.json");
-const alarma = require("./command/criptocurren");
+const CriptoCurrent = require("./command/criptocurren");
 const helpbot = require("./command/helpbot");
 const searchGif = require("./command/searchGifs");
 const deleteMessages = require('./command/deleteMessages');
+const status = require('./command/status');
 const {prefix,prefixCript} = require('./config/botConfig.json');
 
 client.login(botConfig.token);
@@ -20,11 +21,13 @@ client.on("ready", () => {
     .catch(console.error);
 
   // CriptoCurrent
-  alarma(client,prefixCript);
+  CriptoCurrent(client,prefixCript);
   //helpbot
   helpbot(client,prefix);
   //searchGif
-  searchGif(client,prefix)
+  searchGif(client,prefix);
   //deleted Messages
-  deleteMessages(client,prefix)
+  deleteMessages(client,prefix);
+  //-status
+  status(client,prefix);
 });
