@@ -92,8 +92,13 @@ module.exports = (bot, aliases) => {
         break;
       case "skipmk":
         var server = servers[message.guild.id];
-        if (server.dispatcher) server.dispatcher.end();
-        message.channel.send("Skipping the song ⏩");
+        if (server) {
+          if (server.dispatcher) server.dispatcher.end()
+          message.channel.send("Skipping the song ⏩");
+        }
+        else{
+          message.channel.send("No exist queue")
+        }
         break;
       case "stopmk":
         var server = servers[message.guild.id];
