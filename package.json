@@ -11,13 +11,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/opus": "^0.3.2",
     "axios": "^0.19.2",
     "discord.js": "^12.2.0",
     "ffmepg": "0.0.2-security",
     "ffmpeg-static": "^4.2.6",
     "fs": "0.0.1-security",
+    "novelcovid": "^3.0.0",
     "opusscript": "0.0.7",
+    "random-puppy": "^1.1.0",
     "request": "^2.88.2",
+    "s": "^1.0.0",
     "urlencode": "^1.1.0",
     "youtube-search": "^1.1.4",
     "ytdl-core": "^3.1.3"

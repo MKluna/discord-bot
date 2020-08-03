@@ -4,11 +4,14 @@ const botConfig = require("./config/botConfig.json");
 const CriptoCurrent = require("./command/criptocurren");
 const helpbot = require("./command/helpbot");
 const searchGif = require("./command/searchGifs");
-const deleteMessages = require('./command/deleteMessages');
-const status = require('./command/status');
-const weatherFinder = require('./command/weatherFinder');
-const musicPlayer = require('./command/musicPlayer');
-const {prefix,prefixCript} = require('./config/botConfig.json');
+const deleteMessages = require("./command/deleteMessages");
+const status = require("./command/status");
+const weatherFinder = require("./command/weatherFinder");
+const musicPlayer = require("./command/musicPlayer");
+const poll = require("./command/Poll");
+const randomPuppy = require('./command/randomPupy');
+const covid = require('./command/covid');
+const { prefix, prefixCript } = require("./config/botConfig.json");
 
 client.login(botConfig.token);
 
@@ -23,17 +26,23 @@ client.on("ready", () => {
     .catch(console.error);
 
   // CriptoCurrent
-  CriptoCurrent(client,prefixCript);
+  CriptoCurrent(client, prefixCript);
   //helpbot
-  helpbot(client,prefix);
+  helpbot(client, prefix);
   //searchGif
-  searchGif(client,prefix);
+  searchGif(client, prefix);
   //deleted Messages
-  deleteMessages(client,prefix);
+  deleteMessages(client, prefix);
   //-status
-  status(client,prefix);
+  status(client, prefix);
   //weather Finder
-  weatherFinder(client,prefix)
+  weatherFinder(client, prefix);
   //musicPlayer
-  musicPlayer(client,prefix);
+  musicPlayer(client, prefix);
+  //Poll
+  poll(client, prefix);
+  //randomPuppy
+  randomPuppy(client, prefix);
+  //covid
+  covid(client,prefix);
 });
