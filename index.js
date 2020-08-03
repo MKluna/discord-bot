@@ -11,6 +11,10 @@ const musicPlayer = require("./command/musicPlayer");
 const poll = require("./command/Poll");
 const randomPuppy = require('./command/randomPupy');
 const covid = require('./command/covid');
+const ping = require('./command/ping');
+const ascii = require('./command/ascii');
+const calculator = require('./command/calculator');
+const serverInfo = require('./command/serverInfo');
 const { prefix, prefixCript } = require("./config/botConfig.json");
 
 client.login(botConfig.token);
@@ -45,4 +49,12 @@ client.on("ready", () => {
   randomPuppy(client, prefix);
   //covid
   covid(client,prefix);
+  //ping
+  ping(client,prefix);
+  //ascii
+  ascii(client,prefix)
+  //calculator
+  calculator(client,prefix);
+  //serverInfo
+  serverInfo(client,prefix);
 });
