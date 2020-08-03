@@ -9,6 +9,8 @@ const status = require("./command/status");
 const weatherFinder = require("./command/weatherFinder");
 const musicPlayer = require("./command/musicPlayer");
 const poll = require("./command/Poll");
+const randomPuppy = require('./command/randomPupy');
+const covid = require('./command/covid');
 const { prefix, prefixCript } = require("./config/botConfig.json");
 
 client.login(botConfig.token);
@@ -39,4 +41,8 @@ client.on("ready", () => {
   musicPlayer(client, prefix);
   //Poll
   poll(client, prefix);
+  //randomPuppy
+  randomPuppy(client, prefix);
+  //covid
+  covid(client,prefix);
 });
