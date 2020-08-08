@@ -15,7 +15,8 @@ const ping = require('./command/ping');
 const ascii = require('./command/ascii');
 const calculator = require('./command/calculator');
 const serverInfo = require('./command/serverInfo');
-const { prefix, prefixCript } = require("./config/botConfig.json");
+const moviInfo = require('./command/movie');
+const { prefix, prefixCript, prefixMovi } = require("./config/botConfig.json");
 
 client.login(botConfig.token);
 
@@ -57,4 +58,7 @@ client.on("ready", () => {
   calculator(client,prefix);
   //serverInfo
   serverInfo(client,prefix);
+  // moviInfo
+  moviInfo(client,prefixMovi);
+
 });
