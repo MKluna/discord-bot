@@ -1,10 +1,9 @@
-const { prefix } = require("../config/botConfig.json");
 const { MessageEmbed } = require("discord.js");
 const math = require('mathjs');
 
 module.exports = (bot, aliases) => {
   bot.on("message", async (message) => {
-    let cont = message.content.slice(prefix.length).split(" ");
+    let cont = message.content.slice(aliases.length).split(" ");
     const Received = message.content;
     const args = Received.replace("-calculator ", "");
     let resp;

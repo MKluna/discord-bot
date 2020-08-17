@@ -1,17 +1,12 @@
-const {MessageEmbed}=require('discord.js')
-const {prefixCript} = require('../config/botConfig.json')
-const axios = require('axios')
+const {MessageEmbed}=require('discord.js');
+const axios = require('axios');
 
 module.exports = (bot, aliases)=>{
-    // if(typeof aliases === 'string'){
-    //     aliases=[aliases]
-    // }   
-    
     bot.on('message', async message =>{
-    let palabraMayus = message.content.replace(prefixCript,'')
+    let palabraMayus = message.content.replace(aliases,'')
     const cryptoMoneda= palabraMayus.toUpperCase();
     const moneda="USD"; 
-    if(message.content===prefixCript+palabraMayus){
+    if(message.content===aliases+palabraMayus){
     let response = await axios.get(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptoMoneda}&tsyms=${moneda}`);
     const conten = response.data.DISPLAY[cryptoMoneda][moneda];
 

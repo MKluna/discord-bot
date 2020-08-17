@@ -1,11 +1,9 @@
 const { MessageEmbed } = require("discord.js");
-const { prefix } = require("../config/botConfig.json");
-
 module.exports = (bot, aliases) => {
   bot.on("message", async (message) => {
-    let cont = message.content.slice(prefix.length).split(" ");
+    let cont = message.content.slice(aliases.length).split(" ");
     let args = cont.slice(1);
-    if (message.content.includes(prefix + "pg")) {
+    if (message.content.includes(aliases + "pg")) {
       if (!message.member.hasPermission("MANAGE_MESSAGES"))
         return message.reply("You cannot clear messages!");
       if (message.channel.name !== "test")
