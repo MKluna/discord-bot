@@ -1,6 +1,6 @@
 const { Client } = require("discord.js");
-const client = new Client();
-const botConfig = require("./config/botConfig.json");
+const client = new Client().setMaxListeners(50)
+require('dotenv').config();
 const CriptoCurrent = require("./command/criptocurren");
 const helpbot = require("./command/helpbot");
 const searchGif = require("./command/searchGifs");
@@ -17,8 +17,7 @@ const calculator = require('./command/calculator');
 const serverInfo = require('./command/serverInfo');
 const moviInfo = require('./command/movie');
 const { prefix, prefixCript, prefixMovi } = require("./config/botConfig.json");
-
-client.login(botConfig.token);
+client.login(process.env.TOKEN);
 
 client.on("ready", () => {
   console.log(`¡The bot is ready to be used!`);
@@ -60,5 +59,4 @@ client.on("ready", () => {
   serverInfo(client,prefix);
   // moviInfo
   moviInfo(client,prefixMovi);
-
 });
