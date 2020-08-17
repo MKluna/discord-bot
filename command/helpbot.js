@@ -1,9 +1,7 @@
 const { MessageEmbed } = require("discord.js");
-const { prefix } = require("../config/botConfig.json");
-
 module.exports = (bot, aliases) => {
   bot.on("message", async (message) => {
-    if (message.content === prefix + "helpbot") {
+    if (message.content === aliases + "helpbot") {
       const embed = new MessageEmbed()
         .setTitle("Welcome to MK-bot, thanks for using me")
         .setColor([255, 140, 0]).setDescription(`

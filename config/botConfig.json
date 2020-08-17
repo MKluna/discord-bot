@@ -1,9 +1,5 @@
 {
-    "token":"NzMxOTk2NTk2MjIwNDYxMDU2.XwyrBQ.W-53muryH_sZKre5dKjXKpGO-yo",
     "prefix":"-",
     "prefixMovi":"-movie",
-    "prefixCript":"-/",
-    "YOUTUBE_API":"AIzaSyC_fX8TZsLO6mEzxHYU7ciAsQ1RUSpR-1o",
-    "GIPHY_API":"8sNyMSJ7Cm7SuMRAvYwVE1EOnWqBFWkz",
-    "OPEN_WEATHER":"473063b997ac916824f6e38795f94c07"
+    "prefixCript":"-/"
 }

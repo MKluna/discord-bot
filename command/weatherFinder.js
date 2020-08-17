@@ -1,19 +1,18 @@
 const { MessageEmbed } = require("discord.js");
-const { prefix,OPEN_WEATHER } = require("../config/botConfig.json");
+require('dotenv').config();
 const request = require("request");
 
 module.exports = (bot, aliases) => {
   bot.on("message", async (message) => {
-    let cont = message.content.slice(prefix.length).split(" ");
-    let args = cont.slice(1);
-    if (message.content.includes(prefix + "sw")) {
+    let cont = message.content.slice(aliases.length).split(" ");
+    if (message.content.includes(aliases + "sw")) {
       if (!cont[1]) {
         message.channel.send("You need to provide something to search! 🤔");
         return;
       }
       const Received = message.content;
       const Search = Received.replace("-sw ", "");
-      const urlSW = `http://api.openweathermap.org/data/2.5/weather?appid=${OPEN_WEATHER}&q=${Search}&units=metric`;
+      const urlSW = `http://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER}&q=${Search}&units=metric`;
 
       request(
         {

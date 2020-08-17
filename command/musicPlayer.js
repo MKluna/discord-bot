@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const { prefix, YOUTUBE_API } = require("../config/botConfig.json");
+require('dotenv').config()
 const ytdl = require("ytdl-core");
 const search = require("youtube-search");
 
@@ -7,12 +7,11 @@ module.exports = (bot, aliases) => {
   var servers = {};
   var opts = {
     maxResults: 1,
-    key: YOUTUBE_API,
+    key: process.env.YOUTUBE_API,
     type: "video",
   };
   bot.on("message", async (message) => {
-    let cont = message.content.slice(prefix.length).split(" ");
-    let args = cont.slice(1);
+    let cont = message.content.slice(aliases.length).split(" ");
     switch (cont[0]) {
       case "playmk":
         function play(connection, message) {

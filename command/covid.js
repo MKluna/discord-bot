@@ -1,11 +1,10 @@
 const { MessageEmbed } = require("discord.js");
-const { prefix } = require("../config/botConfig.json");
 const api = require("novelcovid");
 api.settings({ baseUrl: "https://disease.sh" });
 
 module.exports = (bot, aliases) => {
   bot.on("message", async (message) => {
-    let cont = message.content.slice(prefix.length).split(" ");
+    let cont = message.content.slice(aliases.length).split(" ");
     const Received = message.content;
     const Search = Received.replace("-covid ", "");
     switch (cont[0]) {

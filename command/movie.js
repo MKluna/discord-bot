@@ -3,8 +3,7 @@ const axios = require('axios')
 
 module.exports = (bot, prefixMovi)=>{
     bot.on('message', async message =>{
-    const movieSearch = message.content.replace(prefixMovi,'')
-    console.log(movieSearch)
+    const movieSearch = message.content.replace(prefixMovi,'');
     if(message.content===prefixMovi+movieSearch){
     let response = await axios.get(`http://omdbapi.com/?t=${movieSearch}&i=tt3896198&apikey=37bca326`);//milpordia
     if(response.data.Response === 'False'){

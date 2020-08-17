@@ -1,9 +1,8 @@
-const { prefix } = require("../config/botConfig.json");
 const figlet = require('figlet');
 
 module.exports = (bot, aliases) => {
   bot.on("message", async (message) => {
-    let cont = message.content.slice(prefix.length).split(" ");
+    let cont = message.content.slice(aliases.length).split(" ");
     const Received = message.content;
     const Text = Received.replace("-ascii ", "");
     switch (cont[0]) {

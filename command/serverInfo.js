@@ -1,9 +1,8 @@
 const { MessageEmbed } = require("discord.js");
-const { prefix } = require("../config/botConfig.json");
 
 module.exports = (bot, aliases) => {
   bot.on("message", async (message) => {
-    let cont = message.content.slice(prefix.length).split(" ");
+    let cont = message.content.slice(aliases.length).split(" ");
     switch (cont[0]) {
       case "sinfo":
         const d = new Date(message.guild.createdTimestamp);
